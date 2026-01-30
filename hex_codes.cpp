@@ -18,7 +18,7 @@ std::vector<unsigned char> from_hex_codes(std::string value)
     #pragma region Main loop
     for(auto&& symbol : value)
     {
-        if(symbol == ' ')
+        if(!std::isxdigit(symbol))
         {
             if(gotSymbol)
                 throw std::exception("Invalid input data");
